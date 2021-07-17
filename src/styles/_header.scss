@@ -1,0 +1,21 @@
+#header {
+    @include flex(row, space-evenly, none);
+    border-bottom: 1px solid $border;
+}
+
+.header-items {
+    margin: 0 5px;
+}
+
+#header-left {
+    @include flex(none, none, none);
+}
+
+#subreddits {
+    @include flex(row, space-evenly, none);
+    padding: 0 15px;
+}
+
+#header-right {
+    @include flex(row, center, none);
+}

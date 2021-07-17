@@ -1,0 +1,24 @@
+#footer {
+    @include flex(column, none, center);
+}
+
+#footer-top {
+    @include flex(row, none, none);
+}
+
+#footer-bottom {
+    @include flex(column, none, center);
+}
+
+.footer-divs {
+    @include flex(column, none, none);
+    margin-left: 50px;
+}
+
+#tos {
+    margin-bottom: 0;
+}
+
+#trademark {
+    margin-top: 0;
+}

@@ -1,0 +1,28 @@
+.sidebar-headings {
+    margin-bottom: 0;
+}
+
+#sidebar {
+    @include flex(column, none, none);
+    padding: 10px;
+    border-left: 1px solid $border;
+}
+
+#submit-post-div {
+    @include flex(column, none, center);
+}
+
+#submit-text-form {
+    @include flex(column, none, none);
+    margin: 10px auto;
+}
+
+.sidebar-divs {
+    @include flex(column, none, center);
+    border-top: 1px solid $border;
+}
+
+.post-flairs {
+    @include flex(row, space-evenly, none);
+    flex-wrap: wrap;
+}
