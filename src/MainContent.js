@@ -2,7 +2,7 @@ import React from 'react';
 import Feed from './Feed.js';
 import Sidebar from './Sidebar.js';
 
-const MainContent = () => {
+export const MainContent = () => {
     return (
         <div id='main-content'>
             <Feed />
@@ -10,5 +10,3 @@ const MainContent = () => {
         </div>
     );
 };
-
-export default MainContent;

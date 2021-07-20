@@ -1,0 +1,31 @@
+a {
+    color: $link;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+        color: $link-alt;
+    }
+}
+
+p {
+    color: $text;
+}
+
+#banner {
+    width: 100%;
+}
+
+h4 {
+    color: $title;
+}
+
+body {
+    background-color: $background-alt;
+    font-family: 'Quicksand', sans-serif;               
+}
+
+#root {
+    @include flex(column, none, none);
+    background-color: $background;
+}
+

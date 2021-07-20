@@ -1,0 +1,35 @@
+.posts {
+    @include flex(column, none, none);
+    padding: 0.625rem;
+    overflow-y: hidden;
+    &:hover {
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+}
+
+.post-elements {
+    margin-top: 0.125rem;
+    margin-bottom: 0.125rem;
+}
+
+#title-format-div {
+    @include flex(row, center, center);
+}
+
+#post-title,
+#post-format {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#post-details {
+    color: $post-details;
+}
+
+#post-format {
+    font-size: 0.5rem;
+    color: $format;
+    margin-left: 0.5rem;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SidebarData, PatchNotes, PostFlairs } from './Data';
 
 const Sidebar = () => {

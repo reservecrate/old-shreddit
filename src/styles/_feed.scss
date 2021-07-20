@@ -1,28 +1,4 @@
 #feed {
     display: grid;
     grid-template: repeat(10, 10%) / repeat(5, 20%);
-    /* align-items: center;
-    grid-template: repeat(auto-fit, minmax(240px, 1fr)) / repeat(auto-fit, minmax(240px, 1fr)); */
-}
-
-.posts {
-    @include flex(column, none, none);
-    padding: 15px;
-    height: auto;
-    width: 300px;
-    overflow: hidden;
-}
-
-.post-elements {
-    margin: 3px auto;
-}
-
-#post-details {
-    color: $post-details;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.post-format {
-    font-size: 0.1rem;
 }

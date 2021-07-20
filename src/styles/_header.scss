@@ -4,18 +4,21 @@
 }
 
 .header-items {
-    margin: 0 5px;
+    margin: 0 0.25rem;
 }
 
 #header-left {
-    @include flex(none, none, none);
+    @include flex(row, none, center);
 }
 
-#subreddits {
-    @include flex(row, space-evenly, none);
-    padding: 0 15px;
+#subreddits-div {
+    @include flex(row, center, none);
+    flex-wrap: wrap;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    
 }
 
 #header-right {
-    @include flex(row, center, none);
+    @include flex(row, none, center);
 }

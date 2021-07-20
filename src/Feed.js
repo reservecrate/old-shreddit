@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Post from './Post.js';
-import { Posts } from './Data.js';
+import { Post } from './Post';
+import { Posts } from './Data';
 
 const Feed = () => {
     const [post, setPost] = useState({
@@ -31,9 +31,9 @@ const Feed = () => {
                     <Post
                         key={
                             new Date().getTime().toString() +
-                            Math.floor(Math.random() * 1000)
+                            Math.random() * 1000
                         }
-                        post={post}
+                        {...post}
                     />
                 );
             })}
