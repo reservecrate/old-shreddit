@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Post } from './Post';
 // import { Posts } from './Data';
 import { Posts } from '.../PrawData.js';
@@ -7,7 +7,7 @@ const Feed = () => {
     const [post, setPost] = useState({
         title: '',
         textContent: '',
-        username: '',
+        username: ''
     });
     const [postsArr, setPostsArr] = useState(Posts);
     const handleSubmit = e => {
@@ -22,7 +22,7 @@ const Feed = () => {
             ...post,
             [name]: value,
             hdwmy: 'hours',
-            number: Math.floor(Math.random() * 10),
+            number: Math.floor(Math.random() * 10)
         });
     };
     return (

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Post = ({ type, title, author, age, textContent, linkUrl, imageUrl, videoUrl }) => {
     console.log(
         type,

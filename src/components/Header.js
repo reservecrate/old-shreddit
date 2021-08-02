@@ -1,4 +1,3 @@
-import React from 'react';
 import { Subreddits } from './Data.js';
 
 export const Header = () => {
