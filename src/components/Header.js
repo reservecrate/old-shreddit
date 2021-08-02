@@ -49,7 +49,7 @@ export const Header = () => {
                     href='https://old.reddit.com/subreddits/'
                     id='more'
                     className='header-items header-right-items'>
-                    more>>
+                    more
                 </a>
             </div>
         </div>

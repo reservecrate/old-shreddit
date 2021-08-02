@@ -7,10 +7,14 @@ const Sidebar = () => {
     return (
         <div id='sidebar'>
             <div id='submit-post-div'>
-                <a id='submit-link' href='#'>
+                <a
+                    id='submit-link'
+                    href='https://old.reddit.com/r/apexlegends/'>
                     submit a new link
                 </a>
-                <a id='submit-text' href='#'>
+                <a
+                    id='submit-text'
+                    href='https://old.reddit.com/r/apexlegends/submit?selftext=true'>
                     submit a new text post
                 </a>
                 {/* <form id='submit-text-form' onSubmit={addPost}>
@@ -21,7 +25,10 @@ const Sidebar = () => {
                 </form>  */}
             </div>
             <div id='sidebar-misc' className='sidebar-divs'>
-                <a id='join' className='sidebar-links' href='#'>
+                <a
+                    id='join'
+                    className='sidebar-links'
+                    href='https://imgur.com/a/w7bQ2FY'>
                     join
                 </a>
                 <a

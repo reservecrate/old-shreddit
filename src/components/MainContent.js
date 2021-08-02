@@ -1,6 +1,6 @@
 import React from 'react';
-import Feed from './Feed.js';
-import Sidebar from './Sidebar.js';
+import Feed from './Feed';
+import Sidebar from './Sidebar';
 
 export const MainContent = () => {
     return (

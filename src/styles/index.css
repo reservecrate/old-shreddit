@@ -1,3 +1,4 @@
+/* $neon-link:  */
 #header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -113,12 +114,6 @@
           align-items: none;
   padding: 0.625rem;
   overflow-y: hidden;
-}
-
-.posts:hover {
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
 }
 
 .post-elements {

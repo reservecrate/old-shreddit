@@ -1,6 +1,16 @@
 import React from 'react';
 
-export const Post = ({ title, number, hdwmy, username, textContent }) => {
+export const Post = ({ type, title, author, age, textContent, linkUrl, imageUrl, videoUrl }) => {
+    console.log(
+        type,
+        title,
+        author,
+        age,
+        textContent,
+        linkUrl,
+        imageUrl,
+        videoUrl
+    );
     return (
         <div className='posts'>
             <div id='title-format-div' className='post-elements'>
@@ -8,7 +18,7 @@ export const Post = ({ title, number, hdwmy, username, textContent }) => {
                 <p id='post-format'>self.apexlegends</p>
             </div>
             <p id='post-details' className='post-elements'>
-                submitted {number} {hdwmy} ago by {username}
+                submitted {age} ago by {author}
             </p>
             <p id='post-text-content' className='post-elements'>
                 {textContent}
@@ -22,5 +32,5 @@ Post.defaultProps = {
     number: Math.floor(Math.random() * 24),
     hdwmy: 'hours',
     username: 'reservecrate',
-    textContent: 'Did you ever hear the tragedy of Darth Plagueis the Wise?',
+    textContent: 'Placeholder',
 };

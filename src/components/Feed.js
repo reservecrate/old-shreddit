@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Post } from './Post';
-import { Posts } from './Data';
+// import { Posts } from './Data';
+import { Posts } from '.../PrawData.js';
 
 const Feed = () => {
     const [post, setPost] = useState({
