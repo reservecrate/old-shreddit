@@ -1,5 +1,4 @@
 #main-content {
     @include flex(row, none, none);
-    border-top: 1px solid $border;
     border-bottom: 1px solid $border;
 }

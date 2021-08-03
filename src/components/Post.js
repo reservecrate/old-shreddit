@@ -1,34 +1,78 @@
-export const Post = ({ type, title, author, age, textContent, linkUrl, imageUrl, videoUrl }) => {
-    console.log(
-        type,
-        title,
-        author,
-        age,
-        textContent,
-        linkUrl,
-        imageUrl,
-        videoUrl
-    );
-    return (
-        <div className='posts'>
-            <div id='title-format-div' className='post-elements'>
-                <h4 id='post-title'>{title}</h4>
-                <p id='post-format'>self.apexlegends</p>
+export const Post = ({
+    domain,
+    title,
+    author,
+    age,
+    textContent,
+    // linkUrl,
+    imageUrl,
+    // videoUrl
+}) => {
+    if (textContent) {
+        return (
+            <div className='posts'>
+                <div id='title-and-domain-div' className='post-elements'>
+                    <h4 id='post-title'>{title}</h4>
+                    <p id='post-format'>
+                        {domain}
+                    </p>
+                </div>
+                <p id='post-details' className='post-elements'>
+                    submitted {age} ago by {author}
+                </p>
+                <p id='post-text-content' className='post-elements'>
+                    {textContent}
+                </p>
             </div>
-            <p id='post-details' className='post-elements'>
-                submitted {age} ago by {author}
-            </p>
-            <p id='post-text-content' className='post-elements'>
-                {textContent}
-            </p>
-        </div>
-    );
-};
-
-Post.defaultProps = {
-    title: 'Title',
-    number: Math.floor(Math.random() * 24),
-    hdwmy: 'hours',
-    username: 'reservecrate',
-    textContent: 'Placeholder',
+        );
+    } /* else if (linkUrl) {
+        return (
+            <div className='posts'>
+                <div id='title-format-div' className='post-elements'>
+                    <a id='post-title' href={linkUrl}>
+                        {title}
+                    </a>
+                    <p id='post-format'>
+                        {type}.{subreddit}
+                    </p>
+                </div>
+                <p id='post-details' className='post-elements'>
+                    submitted {age} ago by {author}
+                </p>
+            </div>
+        );
+    } */ else if (imageUrl) {
+        return (
+            <div className='posts'>
+                <div id='title-and-domain-div' className='post-elements'>
+                    <h4 id='post-title'>{title}</h4>
+                    <p id='post-format'>{domain}</p>
+                </div>
+                <p id='post-details' className='post-elements'>
+                    submitted {age} ago by {author}
+                </p>
+                <img src={imageUrl} alt='post' />
+            </div>
+        );
+    } /* else if (videoUrl) {
+        return (
+            <div className='posts'>
+                <div id='title-format-div' className='post-elements'>
+                    <h4 id='post-title'>{title}</h4>
+                    <p id='post-format'>v.redd.it</p>
+                </div>
+                <p id='post-details' className='post-elements'>
+                    submitted {age} ago by {author}
+                </p>
+                <iframe
+                    src={videoUrl}
+                    title={title}
+                    width='auto'
+                    height='auto'
+                    autoplay
+                    muted
+                />
+            </div>
+        );
+    } */
 };

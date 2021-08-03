@@ -13,11 +13,11 @@
   -webkit-box-align: none;
       -ms-flex-align: none;
           align-items: none;
-  border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
 
 .header-items {
-  margin: 0 0.25rem;
+  margin: 0 .25em;
 }
 
 #header-left {
@@ -52,8 +52,8 @@
           align-items: none;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 #header-right {
@@ -86,16 +86,16 @@
   -webkit-box-align: none;
       -ms-flex-align: none;
           align-items: none;
-  border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 
 #feed {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: (10%)[10];
-  -ms-grid-columns: (20%)[5];
-      grid-template: repeat(10, 10%)/repeat(5, 20%);
+  -ms-grid-columns: (minmax(240px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  -ms-grid-rows: (minmax(200px, 300px))[auto-fit];
+      grid-template-rows: repeat(auto-fit, minmax(200px, 300px));
 }
 
 .posts {
@@ -112,16 +112,20 @@
   -webkit-box-align: none;
       -ms-flex-align: none;
           align-items: none;
-  padding: 0.625rem;
+  padding: 0.625em;
   overflow-y: hidden;
 }
 
-.post-elements {
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
+.posts:hover {
+  background-color: #383838;
 }
 
-#title-format-div {
+.post-elements {
+  margin-top: 0.125em;
+  margin-bottom: 0.125em;
+}
+
+#title-and-domain-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -148,9 +152,9 @@
 }
 
 #post-format {
-  font-size: 0.5rem;
+  font-size: 0.5em;
   color: yellow;
-  margin-left: 0.5rem;
+  margin-left: 0.5em;
 }
 
 .sidebar-headings {
@@ -339,7 +343,7 @@ h4 {
 }
 
 body {
-  background-color: #333333;
+  background-color: #383838;
   font-family: 'Quicksand', sans-serif;
 }
 

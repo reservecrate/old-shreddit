@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import { Post } from './Post';
-// import { Posts } from './Data';
-import { Posts } from '.../PrawData.js';
+import { Posts, Subreddit } from '../praw/PrawData.js';
 
 const Feed = () => {
-    const [post, setPost] = useState({
+    /* const [post, setPost] = useState({
         title: '',
         textContent: '',
         username: ''
-    });
+    }); */
     const [postsArr, setPostsArr] = useState(Posts);
-    const handleSubmit = e => {
+    /* const handleSubmit = e => {
         e.preventDefault();
         setPostsArr([...postsArr, post]);
         setPost({ title: '', textContent: '', username: '' });
@@ -24,21 +23,21 @@ const Feed = () => {
             hdwmy: 'hours',
             number: Math.floor(Math.random() * 10)
         });
-    };
+    }; */
     return (
         <div id='feed'>
-            {postsArr.map(post => {
+            {postsArr.map(postObj => {
                 return (
                     <Post
                         key={
                             new Date().getTime().toString() +
                             Math.random() * 1000
                         }
-                        {...post}
+                        {...postObj} subreddit={Subreddit}
                     />
                 );
             })}
-            <form id='submit-text-form' onSubmit={handleSubmit}>
+            {/* <form id='submit-text-form' onSubmit={handleSubmit}>
                 <textarea
                     required
                     id='title-input'
@@ -74,7 +73,7 @@ const Feed = () => {
                 <button id='submit-button' className='submit-post-items'>
                     Submit
                 </button>
-            </form>
+            </form> */}
         </div>
     );
 };

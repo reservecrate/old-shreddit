@@ -1,4 +1,5 @@
 #feed {
     display: grid;
-    grid-template: repeat(10, 10%) / repeat(5, 20%);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(200px, 300px))
 }
