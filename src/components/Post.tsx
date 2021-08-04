@@ -1,4 +1,7 @@
-export const Post = ({
+import { IPost } from '../praw/prawData';
+
+export const Post: React.FC<IPost> = ({
+    url,
     domain,
     title,
     author,
@@ -7,10 +10,11 @@ export const Post = ({
     // linkUrl,
     imageUrl,
     // videoUrl
+    handleClick
 }) => {
     if (textContent) {
         return (
-            <div className='posts'>
+            <div className='posts' onClick={() => handleClick(url)}>
                 <div id='title-and-domain-div' className='post-elements'>
                     <h4 id='post-title'>{title}</h4>
                     <p id='post-format'>
@@ -43,7 +47,7 @@ export const Post = ({
         );
     } */ else if (imageUrl) {
         return (
-            <div className='posts'>
+            <div className='posts' onClick={() => handleClick(url)}>
                 <div id='title-and-domain-div' className='post-elements'>
                     <h4 id='post-title'>{title}</h4>
                     <p id='post-format'>{domain}</p>
@@ -75,4 +79,9 @@ export const Post = ({
             </div>
         );
     } */
+    else {
+        return <div>
+            <h4>Error</h4>
+        </div>
+    }
 };

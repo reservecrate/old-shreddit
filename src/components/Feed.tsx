@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Post } from './Post';
-import { Posts, Subreddit } from '../praw/PrawData.js';
+import { Posts } from '../praw/prawData';
 
 const Feed = () => {
     /* const [post, setPost] = useState({
@@ -24,6 +24,11 @@ const Feed = () => {
             number: Math.floor(Math.random() * 10)
         });
     }; */
+
+    const handleClick = (url: string) => {
+        window.open(url, '_blank');
+    };
+
     return (
         <div id='feed'>
             {postsArr.map(postObj => {
@@ -33,7 +38,8 @@ const Feed = () => {
                             new Date().getTime().toString() +
                             Math.random() * 1000
                         }
-                        {...postObj} subreddit={Subreddit}
+                        {...postObj}
+                        handleClick={handleClick}
                     />
                 );
             })}

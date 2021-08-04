@@ -1,4 +1,9 @@
 /* $neon-link:  */
+#banner-img {
+  width: 100%;
+  height: 600px;
+}
+
 #header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -332,10 +337,6 @@ a:hover {
 
 p {
   color: #f07f7f;
-}
-
-#banner {
-  width: 100%;
 }
 
 h4 {

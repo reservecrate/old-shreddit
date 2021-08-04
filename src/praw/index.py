@@ -17,11 +17,11 @@ utcnow_aware = datetime.datetime.now(tz=datetime.timezone.utc)
 
 def get_submissions():
     for submission in subreddit.hot(limit=50):
-        print(submission.url)
         created_utc = datetime.datetime.fromtimestamp(
             submission.created_utc, tz=datetime.timezone.utc
         )
         postDict = {}
+        postDict['url'] = submission.shortlink
         postDict['domain'] = submission.domain
         postDict['title'] = submission.title
         postDict['author'] = submission.author.name
