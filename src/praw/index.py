@@ -15,7 +15,7 @@ subreddit = reddit.subreddit('apexlegends')
 postsList = []
 utcnow_aware = datetime.datetime.now(tz=datetime.timezone.utc)
 
-def get_submissions():
+def create_data_file():
     for submission in subreddit.hot(limit=50):
         created_utc = datetime.datetime.fromtimestamp(
             submission.created_utc, tz=datetime.timezone.utc
@@ -28,22 +28,14 @@ def get_submissions():
         postDict['age'] = str(utcnow_aware - created_utc) 
         if postDict['domain'] == 'self.apexlegends':
             postDict['textContent'] = submission.selftext
-            postsList.append(postDict)
         elif postDict['domain'] == 'i.redd.it':
             postDict['imageUrl'] = submission.url
-            postsList.append(postDict)
-        # elif postDict['type'] == 'link':
-            # postDict['linkUrl'] = submission.url
-        """ else:
-            return """
-            # postDict['videoUrl'] = submission.url
+        postsList.append(postDict)
+    with open('src/praw/PrawData.js', 'w', encoding='utf-8') as f:
+        f.write('export const postsArr = ')
+        json.dump(postsList, f, ensure_ascii=False, indent=4)
+        f.write(';\n\n')
+        f.write(f"export const subreddit = '{subreddit}'")
+        f.write(';\n\n') 
 
-get_submissions()
-
-with open('src/praw/PrawData.js', 'w', encoding='utf-8') as f:
-    f.write('export const Posts = ')
-    json.dump(postsList, f, ensure_ascii=False, indent=4)
-    f.write(';\n\n')
-    f.write(f"export const Subreddit = '{subreddit}'")
-    f.write(';\n\n')
-
+create_data_file()

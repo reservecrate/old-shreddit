@@ -7,20 +7,18 @@ export const Post: React.FC<IPost> = ({
     author,
     age,
     textContent,
-    // linkUrl,
-    imageUrl,
-    // videoUrl
-    handleClick
+    imageUrl
 }) => {
-    if (textContent) {
+    const handleClick = () => {
+        window.open(url, '_blank');
+    };
+
+    if (domain === 'self.apexlegends') {
         return (
-            <div className='posts' onClick={() => handleClick(url)}>
-                <div id='title-and-domain-div' className='post-elements'>
-                    <h4 id='post-title'>{title}</h4>
-                    <p id='post-format'>
-                        {domain}
-                    </p>
-                </div>
+            <div className='posts' onClick={handleClick}>
+                <h4 id='post-title' className='post-elements'>
+                    {title} <span id='post-domain'>{domain}</span>
+                </h4>
                 <p id='post-details' className='post-elements'>
                     submitted {age} ago by {author}
                 </p>
@@ -29,59 +27,34 @@ export const Post: React.FC<IPost> = ({
                 </p>
             </div>
         );
-    } /* else if (linkUrl) {
+    } else if (domain === 'i.redd.it') {
         return (
-            <div className='posts'>
-                <div id='title-format-div' className='post-elements'>
-                    <a id='post-title' href={linkUrl}>
-                        {title}
-                    </a>
-                    <p id='post-format'>
-                        {type}.{subreddit}
-                    </p>
-                </div>
-                <p id='post-details' className='post-elements'>
-                    submitted {age} ago by {author}
-                </p>
-            </div>
-        );
-    } */ else if (imageUrl) {
-        return (
-            <div className='posts' onClick={() => handleClick(url)}>
-                <div id='title-and-domain-div' className='post-elements'>
-                    <h4 id='post-title'>{title}</h4>
-                    <p id='post-format'>{domain}</p>
-                </div>
+            <div className='posts' onClick={handleClick}>
+                <h4 id='post-title' className='post-elements'>
+                    {title} <span id='post-domain'>{domain}</span>
+                </h4>
                 <p id='post-details' className='post-elements'>
                     submitted {age} ago by {author}
                 </p>
                 <img src={imageUrl} alt='post' />
             </div>
         );
-    } /* else if (videoUrl) {
+    } else if (domain === 'v.redd.it') {
         return (
-            <div className='posts'>
-                <div id='title-format-div' className='post-elements'>
-                    <h4 id='post-title'>{title}</h4>
-                    <p id='post-format'>v.redd.it</p>
-                </div>
+            <div className='posts' onClick={handleClick}>
+                <h4 id='post-title' className='post-elements'>
+                    {title} <span id='post-domain'>{domain}</span>
+                </h4>
                 <p id='post-details' className='post-elements'>
                     submitted {age} ago by {author}
                 </p>
-                <iframe
-                    src={videoUrl}
-                    title={title}
-                    width='auto'
-                    height='auto'
-                    autoplay
-                    muted
-                />
             </div>
         );
-    } */
-    else {
-        return <div>
-            <h4>Error</h4>
-        </div>
+    } else {
+        return (
+            <div className='posts-error'>
+                <h4>Error: cannot get post data</h4>
+            </div>
+        );
     }
 };

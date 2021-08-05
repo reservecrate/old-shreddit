@@ -6,8 +6,7 @@ export interface IPost {
     age: string;
     textContent?: string;
     imageUrl?: string;
-    handleClick: (url: string) => void;
 }
 
-export const Posts: IPost[];
-export const Subreddit: string;
+export const postsArr: IPost[];
+export const subreddit: string;

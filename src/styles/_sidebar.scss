@@ -3,7 +3,7 @@
 }
 
 #sidebar {
-    @include flex(column, none, none);
+    @include flex(column, space-between, none);
     padding: 10px;
     border-left: 1px solid $border;
 }
@@ -18,7 +18,7 @@
 }
 
 .sidebar-divs {
-    @include flex(column, none, center);
+    @include flex(column, center, center);
     border-top: 1px solid $border;
 }
 

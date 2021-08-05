@@ -12,22 +12,12 @@
     margin-bottom: 0.125em;
 }
 
-#title-and-domain-div {
-    @include flex(row, center, center);
-}
-
-#post-title,
-#post-format {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 #post-details {
     color: $post-details;
 }
 
-#post-format {
-    font-size: 0.5em;
-    color: $format;
+#post-domain {
+    font-size: 0.5rem;
     margin-left: 0.5em;
+    color: $domain;
 }
